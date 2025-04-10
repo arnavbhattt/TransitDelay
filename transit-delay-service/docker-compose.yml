@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: transit-delay-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dynamodb-local
+    networks:
+      - transit-network
+
+  dynamodb-local:
+    image: amazon/dynamodb-local:latest
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    volumes:
+      - "./docker/dynamodb:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+    networks:
+      - transit-network
+
+networks:
+  transit-network:
+    driver: bridge
