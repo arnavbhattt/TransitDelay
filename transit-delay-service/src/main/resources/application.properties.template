@@ -2,10 +2,10 @@ spring.application.name=transit-delay-service
 server.port=8080
 
 # AWS DynamoDB configuration
-aws.dynamodb.endpoint=http://localhost:8000
-aws.dynamodb.region=us-east-1
-aws.dynamodb.access-key=dummy-key
-aws.dynamodb.secret-key=dummy-secret
+aws.dynamodb.endpoint=${DYNAMODB_ENDPOINT:http://localhost:8000}
+aws.dynamodb.region=${AWS_REGION:us-east-1}
+aws.dynamodb.access-key=${AWS_ACCESS_KEY:dummy-key}
+aws.dynamodb.secret-key=${AWS_SECRET_KEY:dummy-secret}
 
 # Logging configuration
 logging.level.root=INFO

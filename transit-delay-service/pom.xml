@@ -12,7 +12,7 @@
 	<artifactId>transit-delay-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>transit-delay-service</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Transit Delay Service for GoRaleigh real-time tracking</description>
 	<url/>
 	<licenses>
 		<license/>
